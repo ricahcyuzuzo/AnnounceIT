@@ -171,6 +171,54 @@ body{
 }
 
 
+.container{
+    width: 30%;
+    border-top: 6px solid #3782A4;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-left: 0.4px solid rgb(139, 141, 143);
+    border-right: 0.4px solid rgb(139, 141, 143);
+    border-bottom: 0.4px solid rgb(139, 141, 143);
+    padding: 30px;
+    background-color: #F4F9FB;
+    margin-top: 20px;
+
+}
+
+.form-input{
+    width: 93%;
+    padding: 8px;
+    margin:7px 0px 7px 0px;
+    border: 1px solid rgb(119, 124, 128);
+    background-color: #F4F9FB;
+    font-family: 'Poiret One';
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+#password{
+    font-size: 16px;
+}
+
+.form-input:focus{
+    border-radius: 4px;
+    border-color: #1F3E5E;
+}
+
+.container .join-button{
+    margin-top: 7px;
+}
+
+.ha-sigin{
+    text-decoration: none;
+    color: #3782A4;
+}
+.right{
+    padding: 50px;
+}
+
+
 @media only screen and (max-width: 800px){
     .nav-links, .navbar .join-button{
         display: none;
