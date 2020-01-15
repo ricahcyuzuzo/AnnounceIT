@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AnnounceIT</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h3 class="logo">AnnounceIT</h3>
+
+            <div class="nav-links">
+                <a href="./index.html">Dashboard</a>
+            </div>
+
+            <div class="nav-links second">
+                <a href="./ad-dashboard.html">Logout</a>
+
+            </div>
+
+            <a href="#" class="menu" id="openNav"><img src="../images/humberger.svg"
+                    alt="The Button expanding navbar in small screens"></a>
+        </nav>
+
+        <div class="header-title">
+            <h2>New Announcement</h2>
+        </div>
+    </header>
+
+    <!-- Mobile navs -->
+    <div class="overlay" id="mobileMenu">
+        <a href="#" class="close" id="closeNav">&times;</a>
+        <div class="overlayContent">
+            <a href="./ad-dashboard.html">Dashboard</a>
+            <a href="./index.html">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main content -->
+
+    <div class="form-container">
+        <form>
+            <label>Announcement Content</label>
+            <textarea name="text" id="text" cols="30" rows="10" class="form-input"
+                placeholder="Announcement Content"></textarea>
+            <label>Due Date</label>
+            <input type="date" name="due-date" id="due-date" class="form-input">
+            <button class="join-button createA">Update</button>
+            <button class="join-button createA b">Cancel</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>Developed by Richard Nshimyumukiza || 2020</p>
+
+        <div class="social-icons">
+
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

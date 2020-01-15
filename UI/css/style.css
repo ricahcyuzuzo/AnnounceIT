@@ -245,6 +245,11 @@ body{
     margin-left: 150px;
 }
 
+.b{
+    margin-top: 10px;
+    background-color: #3782A4;
+}
+
 
 @media only screen and (max-width: 800px){
     .nav-links, .navbar .join-button{
@@ -313,6 +318,11 @@ body{
 
     .createA:hover{
         background-color: #0088a9;
+    }
+
+    .b{
+        background-color: transparent;
+        color: #09141B;
     }
 
 
