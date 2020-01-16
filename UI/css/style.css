@@ -164,6 +164,7 @@ body{
     font-weight: bold;
     color: #F4F9FB;
     font-size: 12px;
+    position: fixed;
 }
 
 .footer p{
@@ -262,6 +263,14 @@ body{
 
     .main{
         flex-direction: column-reverse;
+    }
+
+    .right{
+        padding-top: 0px;
+    }
+
+    .left{
+        padding-top: 0px;
     }
 
     .main-content{
