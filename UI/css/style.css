@@ -264,6 +264,10 @@ body{
     margin-left: 150px;
 }
 
+.C{
+    background-color: #3782A4;
+    color: #F4F9FB;
+}
 .b{
     margin-top: 10px;
     background-color: #3782A4;
@@ -307,6 +311,10 @@ body{
     height: 40px;
     margin-top: 1.3px;
     margin-right: 5px;
+}
+
+.h:hover{
+    background-color: #3782A4;
 }
 
 

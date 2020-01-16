@@ -2,6 +2,8 @@ const openNav = document.querySelector('#openNav');
 const closeNav = document.querySelector('#closeNav');
 const mobileMenu = document.querySelector('#mobileMenu');
 const joinUs = document.querySelector('#join-button');
+
+
 // Creating event listeners
 
 openNav.addEventListener('click', openNavi);
@@ -17,7 +19,9 @@ function closeNavi() {
 }
 
 function signup() {
-    window.location.href = '../signup.html'
+    window.location.href = '../html/signup.html';
 }
+
+
 
 
