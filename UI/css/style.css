@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Handlee&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #F4F9FB;
+    font-family: 'Poiret One', cursive;
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 3%;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+
+.logo{
+    font-family: 'Handlee', cursive;
+    order: 2;
+    font-size: 22px;
+    color: #3782A4;
+}
+
+.nav-links{
+    order: 1;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #09141B;
+    padding: 0px 5px 0px 5px;
+}
+
+.nav-links a:hover{
+    color: #3782A4;
+}
+
+.join-button{
+    background-color: transparent;
+    border: 0px;
+    color: #09141B;
+    order: 3;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    border-radius: 3px;
+    border: 1px solid #3782A4;
+    font-family: 'Poiret One', cursive;
+}
+.join-button:hover{
+    background-color: rgb(43, 113, 146);
+    color: aliceblue;
+}
+
+.menu{
+    display: none;
+}
+
+/* Mobile navs styles */
+.overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(223, 231, 235);
+    overflow-x: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.overlay a{
+    text-decoration: none;
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    color: #09141B;
+}
+
+.overlay a:hover, .overlay a:focus{
+    color: #0088a9;
+}
+
+.overlayContent{
+    font-family: 'Poiret One', cursive;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlayContent .join-button{
+    background-color: #3782A4;
+    border: 0px;
+    color: #F4F9FB;
+    order: 3;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 40px;
+    border-radius: 3px;
+    font-size: 23px;
+    margin-top: 32px;
+    font-family: 'Poiret One', cursive;
+
+}
+
+ .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+ }
+
+
+ /* Main Content */
+
+ .main{
+     display: flex;
+     justify-content: space-between;
+     padding: 30px 10%;
+     align-content: center;
+ }
+
+.main-header{
+    padding-bottom: 20px;
+    font-family: 'Poiret One', cursive;
+    padding-top: 70px;
+ }
+
+ p{
+    padding-bottom: 20px;
+    font-family: 'Poiret One', cursive;
+    width: 400px;
+    padding: 30 50px;
+}
+
+ .main .left .join-button{
+        font-weight:bolder;
+        background: #3782A4;
+        height: 50px;
+        font-size: 20px;
+        color: #F4F9FB;
+}
+
+
+ .right img{
+     padding-top: 30px;
+}
+
+
+.footer{
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color:#3782A4;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #F4F9FB;
+    font-size: 12px;
+    position: fixed;
+}
+
+.footer p{
+    padding: 7px;
+}
+
+.createA{
+    width: 95.9%;
+    padding: 8px;
+}
+.container{
+    width: 30%;
+    border-top: 6px solid #3782A4;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-left: 0.4px solid rgb(139, 141, 143);
+    border-right: 0.4px solid rgb(139, 141, 143);
+    border-bottom: 0.4px solid rgb(139, 141, 143);
+    padding: 30px;
+    background-color: #F4F9FB;
+    margin-top: 20px;
+
+}
+
+.form-input{
+    width: 93%;
+    padding: 8px;
+    margin:7px 0px 7px 0px;
+    border: 1px solid rgb(119, 124, 128);
+    background-color: #F4F9FB;
+    font-family: 'Poiret One';
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+#password{
+    font-size: 16px;
+}
+
+.form-input:focus{
+    border-radius: 4px;
+    border-color: #1F3E5E;
+}
+
+.container .join-button{
+    margin-top: 7px;
+}
+
+.ha-sigin{
+    text-decoration: none;
+    color: #3782A4;
+}
+.right{
+    padding: 50px;
+}
+
+.second{
+    order: 3;
+}
+
+
+.header-title{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+    background-color: #3782A4;
+}
+
+.B{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0px 12px;
+}
+
+.createN{
+    background-color: #F4F9FB;
+    order: 1;
+    margin-left: 5px;
+}
+
+.createN:hover{
+    background-color: rgb(219, 223, 224);
+    color: #09141B;
+}
+
+.header-title h2{
+    text-align: center;
+}
+
+.form-container{
+    width: 60%;
+    left: 50%;
+    padding: 30px 90px;
+    margin-left: 150px;
+}
+
+.C{
+    background-color: #3782A4;
+    color: #F4F9FB;
+}
+.b{
+    margin-top: 10px;
+    background-color: #3782A4;
+}
+
+.announcements{
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(155, 157, 158);
+    align-self: center;
+    margin: 20px 100px; 
+    border-radius: 4px;
+    box-shadow: 1px #09141B;
+}
+
+.card-head{
+    padding-bottom: 3px;
+    text-align: center;
+    border-bottom: 2px solid rgb(172, 178, 182);
+}
+
+.card-content{
+    padding: 20px 0px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.state{
+    padding: 2px;
+    max-width: 120px;
+    order: 2;
+    height: 40px;
+    margin-top: 1.3px;
+    margin-right: 5px;
+}
+
+.h:hover{
+    background-color: #3782A4;
+}
+
+.delete{
+    background-color: #C0425D;
+    color: #F4F9FB;
+    border: 0px solid;
+    padding: 6px 10px;
+}
+
+.delete:hover{
+    background-color: rgb(163, 53, 77);
+}
+
+.change-state{
+    width: 120px;
+    height: 28px;
+}
+
+
+@media only screen and (max-width: 800px){
+    .nav-links, .navbar .join-button{
+        display: none;
+    }
+
+    .menu{
+        display: inherit;
+    }
+
+    .main{
+        flex-direction: column-reverse;
+    }
+
+    .right{
+        padding-top: 0px;
+    }
+
+    .left{
+        padding-top: 0px;
+    }
+
+    .main-content{
+        min-width: 100%;
+    }
+    
+    .container{
+        width: 83%;
+        margin-top: 60px;
+    }
+    .right-si{
+        display: none;
+    } 
+    .main .left .join-button{
+        min-width: 100%;
+        font-weight:bolder;
+        background: #3782A4;
+        height: 50px;
+        font-size: 20px;
+        padding-bottom: 40px;
+        color: #F4F9FB;
+    }
+
+    .container form .join-button{
+        min-width: 100%;
+        font-weight:bolder;
+        background: #3782A4;
+        height: 40px;
+        font-size: 20px;
+        color: #F4F9FB;
+        margin-bottom: 10px;   
+    }
+
+    .footer{
+        position: fixed;
+    }
+
+    .form-container{
+        width: 98%;
+        left: 50%;
+        padding: 30px 10px;
+        font-size: 20px;
+        margin: 0%;
+    }
+
+    .createA{
+        width: 97.8%;
+        margin-top: 9px;
+        font-size: 17px;
+        background-color: #3782A4;
+        color: #F4F9FB;
+        font-weight: bolder;
+    }
+
+    .createA:hover{
+        background-color: #0088a9;
+    }
+
+    .b{
+        background-color: transparent;
+        color: #09141B;
+    }
+
+
+
+
+} 
+
+@media only screen and (max-width: 360px){
+    .right img{
+        max-width: 250px;
+        height: auto;
+    }
+
+    .main-content{
+        justify-content: space-between;
+        font-size: 20px;
+        max-width: 80%;
+    }
+
+    .main .left .join-button{
+        min-width: 100%;
+        font-weight:bolder;
+        background: #3782A4;
+        height: 50px;
+        font-size: 20px;
+        padding-bottom: 40px;
+        color: #F4F9FB;
+    }
+
+}
