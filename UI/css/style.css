@@ -317,6 +317,17 @@ body{
     background-color: #3782A4;
 }
 
+.delete{
+    background-color: #C0425D;
+    color: #F4F9FB;
+    border: 0px solid;
+    padding: 6px 10px;
+}
+
+.delete:hover{
+    background-color: rgb(163, 53, 77);
+}
+
 
 @media only screen and (max-width: 800px){
     .nav-links, .navbar .join-button{
