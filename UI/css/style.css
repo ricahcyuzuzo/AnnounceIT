@@ -9,6 +9,7 @@
 body{
     background-color: #F4F9FB;
     font-family: 'Poiret One', cursive;
+    width: 100%;
 }
 
 .navbar{
@@ -235,6 +236,22 @@ body{
     background-color: #3782A4;
 }
 
+.B{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0px 12px;
+}
+
+.createN{
+    background-color: #F4F9FB;
+    margin-left: 9px;
+}
+
+.createN:hover{
+    background-color: rgb(219, 223, 224);
+    color: #09141B;
+}
+
 .header-title h2{
     text-align: center;
 }
@@ -249,6 +266,37 @@ body{
 .b{
     margin-top: 10px;
     background-color: #3782A4;
+}
+
+.announcements{
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    width: 70%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(155, 157, 158);
+    align-self: center;
+    margin: 20px 100px; 
+    border-radius: 4px;
+    box-shadow: 1px #09141B;
+}
+
+.card-head{
+    padding-bottom: 3px;
+    text-align: center;
+    border-bottom: 2px solid rgb(172, 178, 182);
+}
+
+.card-content{
+    padding: 20px 0px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: space-between;
 }
 
 
