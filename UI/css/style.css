@@ -126,6 +126,7 @@ body{
      justify-content: space-between;
      padding: 30px 10%;
      align-content: center;
+     padding-bottom: 200px;
  }
 
 .main-header{
@@ -172,7 +173,7 @@ body{
 
 
 .container{
-    width: 30%;
+    width: 33%;
     border-top: 6px solid #3782A4;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
