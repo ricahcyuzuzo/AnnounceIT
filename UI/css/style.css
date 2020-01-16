@@ -328,6 +328,11 @@ body{
     background-color: rgb(163, 53, 77);
 }
 
+.change-state{
+    width: 120px;
+    height: 28px;
+}
+
 
 @media only screen and (max-width: 800px){
     .nav-links, .navbar .join-button{
