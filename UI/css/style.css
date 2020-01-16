@@ -244,7 +244,8 @@ body{
 
 .createN{
     background-color: #F4F9FB;
-    margin-left: 9px;
+    order: 1;
+    margin-left: 5px;
 }
 
 .createN:hover{
@@ -297,6 +298,15 @@ body{
 .card-footer{
     display: flex;
     justify-content: space-between;
+}
+
+.state{
+    padding: 2px;
+    max-width: 120px;
+    order: 2;
+    height: 40px;
+    margin-top: 1.3px;
+    margin-right: 5px;
 }
 
 
