@@ -332,6 +332,11 @@ body{
     width: 120px;
     height: 28px;
 }
+.text{
+    color: #09141B;
+    text-decoration: none;
+    padding: 5px;
+}
 
 
 @media only screen and (max-width: 800px){
@@ -414,6 +419,22 @@ body{
     .b{
         background-color: transparent;
         color: #09141B;
+    }
+
+
+    .card-footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-footer div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-footer div .C,.U,.join-button{
+        width: 100%;
+        margin-top: 5px;
     }
 
 
