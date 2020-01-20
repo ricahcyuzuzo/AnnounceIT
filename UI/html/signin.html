@@ -42,12 +42,12 @@
     <div class="main">
         <div class="container">
             <h2 class="container-header">Sign In</h2>
-            <form action="./ad-dashboard.html">
-                <input type="Email" name="email" id="email" class="form-input" placeholder="Enter your Email" required>
-                <input type="password" name="password" id="password" class="form-input" placeholder="Password" required>
-               <button class="join-button" id='signinbtn'>Sign In</button><strong>  Or Are you New? <a href="./signup.html"
+            <!-- <form id="form" onsubmit="checkUser()"> -->
+                <input type="Email" id ='email' name="email" id="email" class="form-input" placeholder="Enter your Email" required>
+                <input type="password" id = 'password' name="password" id="password" class="form-input" placeholder="Password" required>
+               <button class="join-button" id='signinbtn' onkeypress="checkUser()" onclick="checkUser()">Sign In</button><strong>  Or Are you New? <a href="./signup.html"
                         class="ha-sigin">Sign Up</a></strong>
-            </form>
+            <!-- </form> -->
         </div>
     
     
