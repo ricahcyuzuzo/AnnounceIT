@@ -7,6 +7,12 @@ exports["default"] = void 0;
 
 var _user = _interopRequireDefault(require("../models/user.db"));
 
+var _user2 = _interopRequireDefault(require("../models/user.model"));
+
+var _user3 = _interopRequireDefault(require("../helpers/user.validation"));
+
+var _authenticate = _interopRequireDefault(require("../helpers/authenticate"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -15,41 +21,55 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var authController =
+var userController =
 /*#__PURE__*/
 function () {
-  function authController() {
-    _classCallCheck(this, authController);
+  function userController() {
+    _classCallCheck(this, userController);
   }
 
-  _createClass(authController, null, [{
-    key: "signup",
-    value: function signup(req, res) {
-      var user = {
-        id: _user["default"].length + 1,
-        names: req.body.names,
-        email: req.body.email
-      };
+  _createClass(userController, null, [{
+    key: "signUp",
+    value: function signUp(req, res) {
+      var _validate = (0, _user3["default"])((0, _user2["default"])(req)),
+          error = _validate.error;
 
-      _user["default"].push(user);
+      if (error) {
+        return res.status(400).json({
+          status: 'error',
+          error: error.details[0].message.replace(/"/g, '')
+        });
+      }
 
-      res.status(201).send({
-        status: "success",
-        data: user
+      var exist = _user["default"].find(function (usr) {
+        return usr.email === req.body.email;
       });
-    }
-  }, {
-    key: "viewUsers",
-    value: function viewUsers(req, res) {
-      res.status(200).send({
-        status: "success",
-        data: _user["default"]
-      });
+
+      if (exist) {
+        res.status(409).json({
+          status: 'error',
+          error: 'This Email already exists'
+        });
+      } else {
+        _user["default"].push((0, _user2["default"])(req));
+
+        res.status(201).json({
+          status: 'success',
+          data: {
+            email: req.body.email,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            phoneNumber: req.body.phoneNumber,
+            address: req.body.address
+          },
+          token: _authenticate["default"].generateToken(req.body.email, _user["default"].length)
+        });
+      }
     }
   }]);
 
-  return authController;
+  return userController;
 }();
 
-var _default = authController;
+var _default = userController;
 exports["default"] = _default;

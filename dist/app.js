@@ -1,19 +1,34 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
 var _express = _interopRequireDefault(require("express"));
+
+var _bodyParser = _interopRequireDefault(require("body-parser"));
+
+var _morgan = _interopRequireDefault(require("morgan"));
 
 var _auth = _interopRequireDefault(require("./v1/routes/auth.routes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/* eslint-disable comma-dangle */
 var app = (0, _express["default"])();
+var port = process.env.PORT || 3000;
 app.use(_express["default"].json());
+app.use(_bodyParser["default"].urlencoded({
+  extended: false
+}));
+app.use((0, _morgan["default"])('dev'));
 app.use('/api/v1', _auth["default"]);
 app.get('/', function (req, res) {
-  res.status(200).json({
-    status: "success",
-    message: "Welcome to the AnnounceIT API"
+  res.send({
+    Message: 'Welcome on the Api'
   });
 });
-var port = process.env.PORT || 3000;
-app.listen(port, console.log("The API is running on server \"http://localhost:".concat(port, "/api/v1\"")));
+app.listen(port);
+var _default = app;
+exports["default"] = _default;
