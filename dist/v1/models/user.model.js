@@ -20,12 +20,12 @@ var user = function user(req) {
   var user = {
     id: _user["default"].length + 1,
     email: req.body.email,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     password: _authenticate["default"].hashPassword(req.body.password),
     phoneNumber: req.body.phoneNumber,
     address: req.body.address,
-    is_admin: 'true'
+    isAdmin: false
   };
   return user;
 };

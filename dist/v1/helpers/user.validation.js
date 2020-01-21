@@ -16,12 +16,12 @@ var validation = function validation(user) {
   var schema = _joi["default"].object({
     id: _joi["default"].number().required(),
     email: _joi["default"].string().email().required(),
-    first_name: _joi["default"].string().required(),
-    last_name: _joi["default"].string().required(),
+    firstName: _joi["default"].string().required(),
+    lastName: _joi["default"].string().required(),
     password: _joi["default"].string().required(),
     phoneNumber: _joi["default"].string().required(),
     address: _joi["default"].string().required(),
-    is_admin: _joi["default"]["boolean"]().required()
+    isAdmin: _joi["default"]["boolean"]().required()
   });
 
   return schema.validate(user);

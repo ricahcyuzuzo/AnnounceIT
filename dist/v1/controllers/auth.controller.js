@@ -36,7 +36,8 @@ function () {
 
       if (error) {
         return res.status(400).json({
-          status: 'error',
+          status: 400,
+          message: 'Validation Error',
           error: error.details[0].message.replace(/"/g, '')
         });
       }
@@ -54,11 +55,12 @@ function () {
         _user["default"].push((0, _user2["default"])(req));
 
         res.status(201).json({
-          status: 'success',
+          status: 201,
+          message: 'User Created Successfully',
           data: {
             email: req.body.email,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
+            firstName: req.body.first_name,
+            lastName: req.body.last_name,
             phoneNumber: req.body.phoneNumber,
             address: req.body.address
           },

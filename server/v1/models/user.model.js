@@ -4,18 +4,17 @@
 import users from './user.db';
 import auth from '../helpers/authenticate';
 
-const user = (req) => {
+const user = req => {
   const user = {
     id: users.length + 1,
     email: req.body.email,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     password: auth.hashPassword(req.body.password),
     phoneNumber: req.body.phoneNumber,
     address: req.body.address,
-    is_admin: 'true',
+    isAdmin: false
   };
   return user;
 };
-
 export default user;
