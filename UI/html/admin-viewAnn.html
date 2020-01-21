@@ -8,71 +8,63 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
     <header>
         <nav class="navbar">
             <h3 class="logo">AnnounceIT</h3>
-    
             <div class="nav-links">
                 <a href="./admin-dashboard.html">Dashboard</a>
             </div>
-    
             <div class="nav-links second">
                 <a href="./signin.html">Logout</a>
-    
             </div>
-    
             <a href="#" class="menu" id="openNav"><img src="../images/humberger.svg"
                     alt="The Button expanding navbar in small screens"></a>
         </nav>
-    
         <div class="header-title">
-            <h2>View an announcement</h2>
+            <h2>View an announcements</h2>
         </div>
-        <p><a href="../html/admin-dashboard.html" class="text"><strong><u>Go Back</u></strong></a></p>
-    </header>
-
-
-    <div class="main announcements">
-        <div class="card">
-            <div class="card-head">
-                <h3>RBA</h3>
+        </header>
+        <a href="../html/admin-dashboard.html" class="text"><strong><u>Go Back</u></strong></a>
+        <div class="overlay" id="mobileMenu">
+            <a href="#" class="close" id="closeNav">&times;</a>
+            <div class="overlayContent">
+                <a href="./ad-dashboard.html">Dashboard</a>
+                <a href="./index.html">Logout</a>
             </div>
-            <div class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore tempora, magni repellat cumque at
-                quo ut? Porro, labore assumenda, minima fugiat ratione ipsa fugit consequuntur reprehenderit repudiandae
-                aliquid doloremque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab cumque blanditiis,
-                adipisci minus nesciunt atque cum vel doloribus deserunt consequatur
-                excepturi odio quos quae at esse maiores! Recusandae, vel dicta.
-            </div>
-            <div class="card-footer">
-                <p><strong>Due to: 12,February,2020</strong></p>
-
-                <div><a href="../html/view-announcement.html"><button class="join-button delete">Delete</button></a> 
-                    
-                    <select class="state form-input change-state">
-                        <option disabled selected>Change State</option>
-                        <option>Active</option>
-                        <option>Deactivated</option>
-                        <option>Accepted</option>
-                        <option>Declined</option>
-                    </select>
-                
+        </div>
+        <div class="content-announcements">
+            <div class="card">
+                <div class="card-header">
+                    <h3>RBA</h3>
+                </div>
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quia sed
+                    obcaecati dicta, voluptate libero? Dolorum numquam, autem, assumenda maiores
+                    tenetur.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat unde
+                    tempore quidem exercitationem sunt quam ea facilis sequi libero natus
+                    suscipit impedit sit deleniti, accusantium, adipisci quas a perferendis veniam!
+                </div>
+                <div class="card-footer">
+                    <div class="date-container">
+                        <small><b>Start: 01,January,2020</b> <b>End: 02,February,2020</b></small>
+                    </div>
+                    <div class="card-btn">
+                        <button class="delete">Delete</button>
+                        <select class="s-change-state">
+                            <option disabled selected>Change State</option>
+                            <option>Active</option>
+                            <option>Deactivated</option>
+                            <option>Accepted</option>
+                            <option>Declined</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
-    
-    </div>
-    
     <div class="footer">
         <p>Developed by Richard Nshimyumukiza || 2020</p>
-    
-        <div class="social-icons">
-    
-        </div>
     </div>
-
-
     <script src="../js/app.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,139 +8,127 @@
     <title>AnnounceIT</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
 
+<body>
     <header>
         <nav class="navbar">
             <h3 class="logo">AnnounceIT</h3>
-    
             <div class="nav-links">
-                <a href="./admin-dashboard.html">Dashboard</a>
+                <a href="./ad-dashboard.html">Dashboard</a>
             </div>
-    
             <div class="nav-links second">
                 <a href="./signin.html">Logout</a>
-    
             </div>
-    
             <a href="#" class="menu" id="openNav"><img src="../images/humberger.svg"
                     alt="The Button expanding navbar in small screens"></a>
         </nav>
-    
         <div class="header-title">
-            <h2>All announcements of all users</h2>
+            <h2>View All Announcements</h2>
         </div>
-        <p> <strong>Welcome Admin Richard!</strong></p>
-    
-    <div class="main announcements">
-    
-        <div class="card">
-            <div class="card-head">
-                <h3>RBA</h3>
-            </div>
-            <div class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore tempora, magni repellat cumque at
-                quo ut? Porro, labore assumenda, minima fugiat ratione ipsa fugit consequuntur reprehenderit repudiandae
-                aliquid doloremque!
-            </div>
-            <div class="card-footer">
-                <p><strong>Due to: 12,February,2020</strong></p>
-                <div> <a href="../html/admin-viewAnn.html"><button class="join-button C">View</button></a></div>
-            </div>
+    </header>
+    <div class="overlay" id="mobileMenu">
+        <a href="#" class="close" id="closeNav">&times;</a>
+        <div class="overlayContent">
+            <a href="./ad-dashboard.html">Dashboard</a>
+            <a href="./index.html">Logout</a>
         </div>
-    
-        <div class="card">
-            <div class="card-head">
-                <h3>RBA</h3>
-            </div>
-            <div class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore tempora, magni repellat cumque at
-                quo
-                ut? Porro, labore assumenda, minima fugiat ratione ipsa fugit consequuntur reprehenderit repudiandae aliquid
-                doloremque!
-            </div>
-            <div class="card-footer">
-                <p><strong>Due to: 12,February,2020</strong></p>
-                <div><a href="../html/admin-viewAnn.html"><button class="join-button C">View</button></a></div>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="card-head">
-                <h3>RBA</h3>
-            </div>
-            <div class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore tempora, magni repellat cumque at
-                quo
-                ut? Porro, labore assumenda, minima fugiat ratione ipsa fugit consequuntur reprehenderit repudiandae aliquid
-                doloremque!
-            </div>
-            <div class="card-footer">
-                <p><strong>Due to: 12,February,2020</strong></p>
-                <div> <a href="../html/admin-viewAnn.html"><button class="join-button C">View</button></a></div>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="card-head">
-                <h3>RBA</h3>
-            </div>
-            <div class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore tempora, magni repellat cumque at
-                quo
-                ut? Porro, labore assumenda, minima fugiat ratione ipsa fugit consequuntur reprehenderit repudiandae aliquid
-                doloremque!
-            </div>
-            <div class="card-footer">
-                <p><strong>Due to: 12,February,2020</strong></p>
-                <div> <a href="../html/admin-viewAnn.html"><button class="join-button C">View</button></a></div>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="card-head">
-                <h3>RBA</h3>
-            </div>
-            <div class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore tempora, magni repellat cumque at
-                quo
-                ut? Porro, labore assumenda, minima fugiat ratione ipsa fugit consequuntur reprehenderit repudiandae aliquid
-                doloremque!
-            </div>
-            <div class="card-footer">
-                <p><strong>Due to: 12,February,2020</strong></p>
-                <div> <a href="../html/admin-viewAnn.html"><button class="join-button C">View</button></a></div>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="card-head">
-                <h3>RBA</h3>
-            </div>
-            <div class="card-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempore tempora, magni repellat cumque at
-                quo
-                ut? Porro, labore assumenda, minima fugiat ratione ipsa fugit consequuntur reprehenderit repudiandae aliquid
-                doloremque!
-            </div>
-            <div class="card-footer">
-                <p><strong>Due to: 12,February,2020</strong></p>
-                <div> <a href="../html/admin-viewAnn.html"><button class="join-button C">View</button></a></div>
-            </div>
-        </div>
-    
     </div>
-    
-    
+    <div class="content-announcements">
+        <div class="card">
+            <div class="card-header">
+                <h3>RBA</h3>
+            </div>
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quia sed
+                obcaecati dicta, voluptate libero? Dolorum numquam, autem, assumenda maiores
+                tenetur.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat unde
+                tempore quidem exercitationem sunt quam ea facilis sequi libero natus
+                suscipit impedit sit deleniti, accusantium, adipisci quas a perferendis veniam!
+            </div>
+            <div class="card-footer">
+                <div class="date-container">
+                    <small><b>Start: 01,January,2020</b> <b>End: 02,February,2020</b></small>
+                </div>
+                <div class="card-btn">
+                    <button class="delete">Delete</button>
+                    <button class="join-button" onclick="openAdmin()">View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3>RBA</h3>
+            </div>
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quia sed
+                obcaecati dicta, voluptate libero? Dolorum numquam, autem, assumenda maiores
+                tenetur.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat unde
+                tempore quidem exercitationem sunt quam ea facilis sequi libero natus
+                suscipit impedit sit deleniti, accusantium, adipisci quas a perferendis veniam!
+            </div>
+            <div class="card-footer">
+                <div class="date-container">
+                    <small><b>Start: 01,January,2020</b> <b>End: 02,February,2020</b></small>
+                </div>
+
+                <div class="card-btn">
+                    <button class="delete">Delete</button>
+                    <button class="join-button" onclick="openAdmin()">View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3>RBA</h3>
+            </div>
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quia sed
+                obcaecati dicta, voluptate libero? Dolorum numquam, autem, assumenda maiores
+                tenetur.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat unde
+                tempore quidem exercitationem sunt quam ea facilis sequi libero natus
+                suscipit impedit sit deleniti, accusantium, adipisci quas a perferendis veniam!
+            </div>
+            <div class="card-footer">
+                <div class="date-container">
+                    <small><b>Start: 01,January,2020</b> <b>End: 02,February,2020</b></small>
+                </div>
+
+                <div class="card-btn">
+                    <button class="delete">Delete</button>
+                    <button class="join-button" onclick="openAdmin()">View</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3>RBA</h3>
+            </div>
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quia sed
+                obcaecati dicta, voluptate libero? Dolorum numquam, autem, assumenda maiores
+                tenetur.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat unde
+                tempore quidem exercitationem sunt quam ea facilis sequi libero natus
+                suscipit impedit sit deleniti, accusantium, adipisci quas a perferendis veniam!
+            </div>
+            <div class="card-footer">
+                <div class="date-container">
+                    <small><b>Start: 01,January,2020</b> <b>End: 02,February,2020</b></small>
+                </div>
+
+                <div class="card-btn">
+                    <button class="delete">Delete</button>
+                    <button class="join-button" onclick="openAdmin()">View</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="footer">
         <p>Developed by Richard Nshimyumukiza || 2020</p>
-    
-        <div class="social-icons">
-    
-        </div>
     </div>
-
-
     <script src="../js/app.js"></script>
 </body>
 </html>
