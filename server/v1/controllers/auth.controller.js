@@ -1,15 +1,17 @@
+/* eslint-disable no-else-return */
 /* eslint-disable no-undef */
 /* eslint-disable arrow-parens */
 /* eslint-disable consistent-return */
 /* eslint-disable comma-dangle */
 import users from '../models/user.db';
 import user from '../models/user.model';
+import userLogin from '../models/signIn.model';
 import validate from '../helpers/user.validation';
 import auth from '../helpers/authenticate';
 
 class userController {
   static signUp(req, res) {
-    const { error } = validate(user(req));
+    const { error } = validate.validation(user(req));
 
     if (error) {
       return res.status(400).json({
@@ -38,6 +40,42 @@ class userController {
           isAdmin: user(req).isAdmin
         },
         token: auth.generateToken(req.body.email, users.length)
+      });
+    }
+  }
+
+  static signIn(req, res) {
+    const { error } = validate.validateSignin(userLogin(req));
+
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        errorMessage: error.details[0].message.replace(/"/g, '')
+      });
+    }
+
+    const userAccount = users.find(usr => usr.email === req.body.email);
+
+    if (!userAccount) {
+      return res.status(401).json({
+        status: 401,
+        message: "Oops, You don't have an account yet, Please sign up"
+      });
+    }
+    const verifyPassword = auth.checkPassword(
+      req.body.password,
+      userAccount.password
+    );
+    if (verifyPassword) {
+      return res.status(202).json({
+        status: 202,
+        message: 'You are signed in successfully',
+        token: auth.generateToken(userAccount.email, userAccount.id)
+      });
+    } else {
+      return res.status(402).json({
+        status: 402,
+        message: 'SignIn Failed'
       });
     }
   }

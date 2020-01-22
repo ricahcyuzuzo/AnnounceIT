@@ -19,4 +19,15 @@ const validation = user => {
   return schema.validate(user);
 };
 
-export default validation;
+const validateSignin = user => {
+  const schema = Hapi.object({
+    email: Hapi.string()
+      .email()
+      .required(),
+    password: Hapi.string().required()
+  });
+
+  return schema.validate(user);
+};
+
+export default { validateSignin, validation };

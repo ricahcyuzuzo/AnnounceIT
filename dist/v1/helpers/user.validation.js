@@ -27,5 +27,17 @@ var validation = function validation(user) {
   return schema.validate(user);
 };
 
-var _default = validation;
+var validateSignin = function validateSignin(user) {
+  var schema = _joi["default"].object({
+    email: _joi["default"].string().email().required(),
+    password: _joi["default"].string().required()
+  });
+
+  return schema.validate(user);
+};
+
+var _default = {
+  validateSignin: validateSignin,
+  validation: validation
+};
 exports["default"] = _default;

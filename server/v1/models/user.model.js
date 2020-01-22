@@ -17,4 +17,5 @@ const user = req => {
   };
   return user;
 };
+
 export default user;
