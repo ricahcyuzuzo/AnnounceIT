@@ -48,7 +48,7 @@ function () {
 
       if (exist) {
         res.status(409).json({
-          status: 'error',
+          status: 409,
           error: 'This Email already exists'
         });
       } else {
@@ -59,8 +59,8 @@ function () {
           message: 'User Created Successfully',
           data: {
             email: req.body.email,
-            firstName: req.body.first_name,
-            lastName: req.body.last_name,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             phoneNumber: req.body.phoneNumber,
             address: req.body.address
           },
