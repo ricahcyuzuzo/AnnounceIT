@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable arrow-parens */
 /* eslint-disable consistent-return */
 /* eslint-disable comma-dangle */
@@ -13,8 +14,7 @@ class userController {
     if (error) {
       return res.status(400).json({
         status: 400,
-        message: 'Validation Error',
-        error: error.details[0].message.replace(/"/g, '')
+        errorMessage: error.details[0].message.replace(/"/g, '')
       });
     }
 
@@ -34,7 +34,8 @@ class userController {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           phoneNumber: req.body.phoneNumber,
-          address: req.body.address
+          address: req.body.address,
+          isAdmin: user(req).isAdmin
         },
         token: auth.generateToken(req.body.email, users.length)
       });

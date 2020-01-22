@@ -37,8 +37,7 @@ function () {
       if (error) {
         return res.status(400).json({
           status: 400,
-          message: 'Validation Error',
-          error: error.details[0].message.replace(/"/g, '')
+          errorMessage: error.details[0].message.replace(/"/g, '')
         });
       }
 
@@ -62,7 +61,8 @@ function () {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             phoneNumber: req.body.phoneNumber,
-            address: req.body.address
+            address: req.body.address,
+            isAdmin: (0, _user2["default"])(req).isAdmin
           },
           token: _authenticate["default"].generateToken(req.body.email, _user["default"].length)
         });

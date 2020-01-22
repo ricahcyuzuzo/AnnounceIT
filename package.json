@@ -4,7 +4,7 @@
   "description": "",
   "main": "./server/app.js",
   "scripts": {
-    "test": "node --require @babel/register ./node_modules/mocha/bin/mocha ./server/v1/tests/app.test.js",
+    "test": "node --require @babel/register ./node_modules/mocha/bin/mocha ./server/v1/tests/*.js",
     "dev": "nodemon --exec babel-node server/app.js",
     "build": "babel server --out-dir dist",
     "start": "node dist/app.js",
