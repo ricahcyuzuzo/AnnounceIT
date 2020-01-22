@@ -12,14 +12,12 @@ import auth from '../helpers/authenticate';
 class userController {
   static signUp(req, res) {
     const { error } = validate.validation(user(req));
-
     if (error) {
       return res.status(400).json({
         status: 400,
         errorMessage: error.details[0].message.replace(/"/g, '')
       });
     }
-
     const exist = users.find(usr => usr.email === req.body.email);
     if (exist) {
       res.status(409).json({
@@ -46,19 +44,16 @@ class userController {
 
   static signIn(req, res) {
     const { error } = validate.validateSignin(userLogin(req));
-
     if (error) {
       return res.status(400).json({
         status: 400,
         errorMessage: error.details[0].message.replace(/"/g, '')
       });
     }
-
     const userAccount = users.find(usr => usr.email === req.body.email);
-
     if (!userAccount) {
-      return res.status(401).json({
-        status: 401,
+      return res.status(403).json({
+        status: 403,
         message: "Oops, You don't have an account yet, Please sign up"
       });
     }
@@ -67,18 +62,17 @@ class userController {
       userAccount.password
     );
     if (verifyPassword) {
-      return res.status(202).json({
-        status: 202,
+      return res.status(200).json({
+        status: 200,
         message: 'You are signed in successfully',
         token: auth.generateToken(userAccount.email, userAccount.id)
       });
     } else {
-      return res.status(402).json({
-        status: 402,
+      return res.status(401).json({
+        status: 401,
         message: 'SignIn Failed'
       });
     }
   }
 }
-
 export default userController;

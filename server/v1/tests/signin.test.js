@@ -20,10 +20,6 @@ describe('Testing the whole signin endpoint', () => {
     phoneNumber: '0788888888',
     address: 'Test'
   };
-  const user1 = {
-    email: 'test@test.com',
-    password: 'test'
-  };
 
   const user2 = {
     email: 'notest@notest.com',
@@ -59,7 +55,7 @@ describe('Testing the whole signin endpoint', () => {
       .post('/api/v1/auth/signin')
       .send({ email: newUser.email, password: newUser.password })
       .end((err, res) => {
-        res.should.have.status(202);
+        res.should.have.status(200);
         res.body.should.be.a('object');
         res.body.should.have.property('token');
         res.body.should.have.property(
@@ -76,7 +72,7 @@ describe('Testing the whole signin endpoint', () => {
       .post('/api/v1/auth/signin')
       .send(user2)
       .end((err, res) => {
-        res.should.have.status(401);
+        res.should.have.status(403);
         res.body.should.be.a('object');
         res.body.should.have.property(
           'message',
@@ -104,7 +100,7 @@ describe('Testing the whole signin endpoint', () => {
       .post('/api/v1/auth/signin')
       .send(user3)
       .end((err, res) => {
-        res.should.have.status(402);
+        res.should.have.status(401);
         res.body.should.be.a('object');
         res.body.should.have.property('message', 'SignIn Failed');
         done();
