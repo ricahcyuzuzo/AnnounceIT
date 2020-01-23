@@ -6,5 +6,9 @@ const routes = Router();
 
 routes.post('/user/announcement', advertiserController.createAnnouncement);
 routes.patch('/user/announcement/:id', advertiserController.updateAnnouncement);
+routes.get(
+  '/user/announcements/:ownerId',
+  advertiserController.viewAnnouncements
+);
 
 export default routes;

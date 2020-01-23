@@ -73,5 +73,24 @@ class advertiserController {
       }
     });
   }
+
+  static viewAnnouncements(req, res) {
+    const announces = announcements.filter(
+      ann => ann.owner === parseInt(req.params.ownerId)
+    );
+
+    if (announces.length === 0) {
+      return res.status(404).json({
+        status: 404,
+        message: 'You have not yet any announcement!'
+      });
+    }
+
+    res.status(200).json({
+      status: 200,
+      message: 'Here are all your announcemts',
+      data: announces
+    });
+  }
 }
 export default advertiserController;
