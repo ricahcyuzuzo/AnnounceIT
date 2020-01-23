@@ -47,7 +47,7 @@ describe('Update an announcement', () => {
         done();
       });
   });
-  it('Should check if announcement exists', done => {
+  it('Should find the announcement to update', done => {
     chai
       .request(app)
       .patch('/api/v1/user/updateAnnouncement')
