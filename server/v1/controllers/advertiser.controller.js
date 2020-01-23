@@ -92,5 +92,24 @@ class advertiserController {
       data: announces
     });
   }
+
+  static viewbyspecificState(req, res) {
+    const announces = announcements.filter(
+      ann => ann.status === req.params.status
+    );
+
+    if (announces.length === 0) {
+      return res.status(404).json({
+        status: 404,
+        message: 'No announcements assigned to this status'
+      });
+    }
+
+    res.status(200).json({
+      status: 200,
+      message: `Here all announcements assigned to ${announces.status}`,
+      data: announces
+    });
+  }
 }
 export default advertiserController;

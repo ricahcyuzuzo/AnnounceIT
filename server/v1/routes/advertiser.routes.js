@@ -10,5 +10,9 @@ routes.get(
   '/user/announcements/:ownerId',
   advertiserController.viewAnnouncements
 );
+routes.get(
+  '/user/announcement/:status',
+  advertiserController.viewbyspecificState
+);
 
 export default routes;
