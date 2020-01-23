@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import authRoutes from './v1/routes/auth.routes';
+import advertiserRoutes from './v1/routes/advertiser.routes';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,10 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 
 app.use('/api/v1', authRoutes);
+app.use('/api/v1', advertiserRoutes);
 
 app.get('/', (req, res) => {
   res.send({
-    Message: 'Welcome on the Api',
+    Message: 'Welcome on the Api'
   });
 });
 
