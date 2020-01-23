@@ -111,5 +111,24 @@ class advertiserController {
       data: announces
     });
   }
+
+  static viewSpecificannouncement(req, res) {
+    const announces = announcements.find(
+      ann => ann.id === parseInt(req.params.id)
+    );
+
+    if (!announces) {
+      return res.status(404).json({
+        status: 404,
+        message: 'Announcement not found!'
+      });
+    }
+
+    res.status(200).json({
+      status: 200,
+      message: 'Get this announcement',
+      data: announces
+    });
+  }
 }
 export default advertiserController;

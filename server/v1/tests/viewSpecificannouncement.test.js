@@ -8,26 +8,23 @@ import app from '../../app';
 chai.should();
 chai.use(chaiHttp);
 
-describe('Testing the View all announcements with specific state', () => {
-  it('Should not get any announcement if not found', done => {
+describe('Testing the View an announcement', () => {
+  it('Should not get an announcement if not found', done => {
     chai
       .request(app)
-      .get('/api/v1/user/announcement/status/hfjdhfjdhfdj')
+      .get('/api/v1/user/announcement/3678')
       .end((err, res) => {
         res.should.have.status(404);
         res.body.should.be.a('object');
-        res.body.should.have.property(
-          'message',
-          'No announcements assigned to this status'
-        );
+        res.body.should.have.property('message', 'Announcement not found!');
       });
     done();
   });
 
-  it('Should get all announcements of a specific status', done => {
+  it('Should get an announcements', done => {
     chai
       .request(app)
-      .get('/api/v1/user/announcement/status/pending')
+      .get('/api/v1/user/announcement/1')
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
