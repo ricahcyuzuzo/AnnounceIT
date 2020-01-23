@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import authRoutes from './v1/routes/auth.routes';
 import advertiserRoutes from './v1/routes/advertiser.routes';
+import adminRoutes from './v1/routes/admin.routes';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use(morgan('dev'));
 
 app.use('/api/v1', authRoutes);
 app.use('/api/v1', advertiserRoutes);
+app.use('/api/v1', adminRoutes);
 
 app.get('/', (req, res) => {
   res.send({
