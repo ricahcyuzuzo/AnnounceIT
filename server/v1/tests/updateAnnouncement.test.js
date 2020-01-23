@@ -37,7 +37,7 @@ describe('Update an announcement', () => {
   it('Should not update announcement if there is Validation error', done => {
     chai
       .request(app)
-      .patch('/api/v1/user/announcement/:id')
+      .patch('/api/v1/user/announcement/1')
       .send(announcement2)
       .end((err, res) => {
         res.should.have.status(400);
@@ -50,7 +50,7 @@ describe('Update an announcement', () => {
   it('Should find the announcement if exists', done => {
     chai
       .request(app)
-      .patch('/api/v1/user/announcement/:id')
+      .patch('/api/v1/user/announcement/1231')
       .send(announcement1)
       .end((err, res) => {
         res.should.have.status(404);
@@ -66,7 +66,7 @@ describe('Update an announcement', () => {
   it('Should update the announcement', done => {
     chai
       .request(app)
-      .patch('/api/v1/user/announcement/:id')
+      .patch('/api/v1/user/announcement/1')
       .send(announcement)
       .end((err, res) => {
         res.should.have.status(200);

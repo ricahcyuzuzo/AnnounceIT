@@ -8,11 +8,21 @@ const validation = user => {
     email: Hapi.string()
       .email()
       .required(),
-    firstName: Hapi.string().required(),
-    lastName: Hapi.string().required(),
-    password: Hapi.string().required(),
-    phoneNumber: Hapi.string().required(),
-    address: Hapi.string().required(),
+    firstName: Hapi.string()
+      .required()
+      .trim(),
+    lastName: Hapi.string()
+      .required()
+      .trim(),
+    password: Hapi.string()
+      .required()
+      .trim(),
+    phoneNumber: Hapi.string()
+      .required()
+      .trim(),
+    address: Hapi.string()
+      .required()
+      .trim(),
     isAdmin: Hapi.boolean().required()
   });
 

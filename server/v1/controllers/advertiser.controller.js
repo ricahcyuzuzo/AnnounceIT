@@ -40,19 +40,19 @@ class advertiserController {
   }
 
   static updateAnnouncement(req, res) {
-    const { error } = validate(announcement(req));
-    if (error) {
-      return res.status(400).json({
-        status: 400,
-        errorMessage: error.details[0].message.replace(/"/g, '')
-      });
-    }
-
     const exist = announcements.find(ann => ann.id === parseInt(req.params.id));
     if (!exist) {
       return res.status(404).json({
         status: 404,
         errorMessage: 'Announcement Not Found!'
+      });
+    }
+
+    const { error } = validate(announcement(req));
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        errorMessage: error.details[0].message.replace(/"/g, '')
       });
     }
 
