@@ -48,7 +48,7 @@ class advertiserController {
       });
     }
 
-    const exist = announcements.find(ann => ann.id === req.body.id);
+    const exist = announcements.find(ann => ann.id === parseInt(req.params.id));
     if (!exist) {
       return res.status(404).json({
         status: 404,
@@ -56,7 +56,6 @@ class advertiserController {
       });
     }
 
-    announcements.id = req.body.id;
     announcements.text = req.body.text;
     announcements.owner = req.body.owner;
     announcements.startDate = req.body.startDate;
@@ -66,7 +65,6 @@ class advertiserController {
       status: 200,
       message: 'Announcement Updated!',
       data: {
-        id: req.body.id,
         owner: req.body.owner,
         status: announcement(req).status,
         text: req.body.text,

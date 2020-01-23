@@ -10,7 +10,6 @@ chai.use(chaiHttp);
 
 describe('Update an announcement', () => {
   const announcement = {
-    id: 1,
     owner: 1,
     text:
       'hskdjhsjdfh shdk jhdf kh sdfj k djasd  dasdj ja sdk asdkj hasdj as k adsj',
@@ -38,7 +37,7 @@ describe('Update an announcement', () => {
   it('Should not update announcement if there is Validation error', done => {
     chai
       .request(app)
-      .patch('/api/v1/user/updateAnnouncement')
+      .patch('/api/v1/user/announcement/:id')
       .send(announcement2)
       .end((err, res) => {
         res.should.have.status(400);
@@ -51,7 +50,7 @@ describe('Update an announcement', () => {
   it('Should find the announcement if exists', done => {
     chai
       .request(app)
-      .patch('/api/v1/user/updateAnnouncement')
+      .patch('/api/v1/user/announcement/:id')
       .send(announcement1)
       .end((err, res) => {
         res.should.have.status(404);
@@ -63,10 +62,11 @@ describe('Update an announcement', () => {
         done();
       });
   });
+
   it('Should update the announcement', done => {
     chai
       .request(app)
-      .patch('/api/v1/user/updateAnnouncement')
+      .patch('/api/v1/user/announcement/:id')
       .send(announcement)
       .end((err, res) => {
         res.should.have.status(200);

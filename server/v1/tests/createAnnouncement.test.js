@@ -38,7 +38,7 @@ describe('Testing the create Announcement Feature', () => {
   it('Should create a new Announcement', done => {
     chai
       .request(app)
-      .post('/api/v1/user/createAnnouncement')
+      .post('/api/v1/user/announcement')
       .send(announcement)
       .end((err, res) => {
         res.should.have.status(201);
@@ -53,7 +53,7 @@ describe('Testing the create Announcement Feature', () => {
   it('Should find the owner', done => {
     chai
       .request(app)
-      .post('/api/v1/user/createAnnouncement')
+      .post('/api/v1/user/announcement')
       .send(announcement1)
       .end((err, res) => {
         res.should.have.status(404);
@@ -65,7 +65,7 @@ describe('Testing the create Announcement Feature', () => {
   it('Should not create announcement if there is Validation error', done => {
     chai
       .request(app)
-      .post('/api/v1/user/createAnnouncement')
+      .post('/api/v1/user/announcement')
       .send(announcement3)
       .end((error, res) => {
         res.should.have.status(400);
