@@ -12,16 +12,6 @@ chai.should();
 chai.use(chaiHttp);
 
 describe('Testing the create Announcement Feature', () => {
-  const newUser = {
-    id: users.length + 1,
-    email: 'testion@test.com',
-    firstName: 'Test',
-    lastName: 'testin',
-    password: auth.hashPassword('test'),
-    phoneNumber: '0788888888',
-    address: 'Test'
-  };
-
   const announcement = {
     id: announcements.length + 1,
     owner: 1,
