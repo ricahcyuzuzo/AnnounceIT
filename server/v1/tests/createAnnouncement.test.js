@@ -25,19 +25,24 @@ describe('Testing the create Announcement Feature', () => {
   const announcement = {
     id: announcements.length + 1,
     owner: 1,
+    text:
+      'hskdjhsjdfh shdk jhdf kh sdfj k djasd  dasdj ja sdk asdkj hasdj as k adsj',
     startDate: '01,10,2020',
     endDate: '05,11,2020'
   };
 
   const announcement1 = {
     id: announcements.length + 1,
-    owner: 1,
+    owner: 6776786,
+    text:
+      'sajkhasd jhakjsd hjasdhjd sj asdj aks djadkadsjads hjadkshaj jkhadsjk hadh',
     startDate: '01,10,2020',
     endDate: '05,11,2020'
   };
   const announcement3 = {
     id: announcements.length + 1,
-    owner: 2323,
+    owner: 1,
+    text: 'ads',
     startDate: '01,10,2020',
     endDate: '05,11,2020'
   };
@@ -65,7 +70,7 @@ describe('Testing the create Announcement Feature', () => {
       .end((err, res) => {
         res.should.have.status(404);
         res.body.should.be.a('object');
-        res.body.should.have.property('errorMessage', 'Owner Not Found!');
+        res.body.should.have.property('errorMessage', 'Owner Not found!');
         done();
       });
   });
