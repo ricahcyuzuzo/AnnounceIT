@@ -4,9 +4,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../../app';
-import users from '../models/user.db';
 import announcements from '../models/announcement.db';
-import auth from '../helpers/authenticate';
 
 chai.should();
 chai.use(chaiHttp);
