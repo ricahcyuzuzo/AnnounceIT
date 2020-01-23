@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 /* eslint-disable arrow-parens */
 /* eslint-disable consistent-return */
 /* eslint-disable comma-dangle */
@@ -36,6 +37,43 @@ class advertiserController {
         }
       });
     }
+  }
+
+  static updateAnnouncement(req, res) {
+    const { error } = validate(announcement(req));
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        errorMessage: error.details[0].message.replace(/"/g, '')
+      });
+    }
+
+    const exist = announcements.find(ann => ann.id === req.body.id);
+    if (!exist) {
+      return res.status(404).json({
+        status: 404,
+        errorMessage: 'Announcement Not Found!'
+      });
+    }
+
+    announcements.id = req.body.id;
+    announcements.text = req.body.text;
+    announcements.owner = req.body.owner;
+    announcements.startDate = req.body.startDate;
+    announcements.endDate = req.body.endDate;
+
+    return res.status(200).json({
+      status: 200,
+      message: 'Announcement Updated!',
+      data: {
+        id: req.body.id,
+        owner: req.body.owner,
+        status: announcement(req).status,
+        text: req.body.text,
+        startDate: req.body.startDate,
+        endDate: req.body.endDate
+      }
+    });
   }
 }
 export default advertiserController;

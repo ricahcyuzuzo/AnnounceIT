@@ -8,5 +8,9 @@ routes.post(
   '/user/createAnnouncement',
   advertiserController.createAnnouncement
 );
+routes.patch(
+  '/user/updateAnnouncement',
+  advertiserController.updateAnnouncement
+);
 
 export default routes;
