@@ -47,6 +47,7 @@ describe('Update an announcement', () => {
         done();
       });
   });
+
   it('Should find the announcement to update', done => {
     chai
       .request(app)
