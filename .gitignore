@@ -1,7 +1,6 @@
 node_modules/
 .vscode/
 .nyc_output/
-dist/
 .env
 npm-debug.log
 .DS_Store
