@@ -4,7 +4,6 @@
 /* eslint-disable comma-dangle */
 import announcements from '../models/announcement.db';
 import announcement from '../models/announcement.model';
-import users from '../models/user.db';
 import validate from '../helpers/announcement.validation';
 
 class adminController {
