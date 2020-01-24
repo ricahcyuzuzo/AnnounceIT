@@ -30,6 +30,42 @@ class adminController {
       message: 'Deleted'
     });
   }
+
+  static updateAnnouncementStatus(req, res) {
+    const exist = announcements.find(ann => ann.id === parseInt(req.params.id));
+    if (!exist) {
+      return res.status(404).json({
+        status: 404,
+        errorMessage: 'Announcement Not Found!'
+      });
+    }
+
+    const { error } = validate(announcement(req));
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        errorMessage: error.details[0].message.replace(/"/g, '')
+      });
+    }
+
+    announcements.text = req.body.text;
+    announcements.owner = req.body.owner;
+    announcements.status = req.body.status;
+    announcements.startDate = req.body.startDate;
+    announcements.endDate = req.body.endDate;
+
+    return res.status(200).json({
+      status: 200,
+      message: 'Announcement Status Changed!',
+      data: {
+        owner: req.body.owner,
+        status: announcement(req).status,
+        text: req.body.text,
+        startDate: req.body.startDate,
+        endDate: req.body.endDate
+      }
+    });
+  }
 }
 
 export default adminController;
