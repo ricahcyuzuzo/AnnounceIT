@@ -7,7 +7,7 @@
     "test": "nyc --reporter=html --reporter=text node --require @babel/register ./node_modules/mocha/bin/mocha ./server/v1/tests/*.js --exit",
     "dev": "nodemon --exec babel-node server/app.js",
     "build": "babel server --out-dir dist",
-    "start": "node dist/app.js",
+    "start": "npm run build && node dist/app.js",
     "lint": "eslint 'server/**/*.js'",
     "format": "prettier-eslint --write $PWD/'server/**/*.{js,ts,jsx,tsx,vue}' $PWD/'*.{js,ts}'",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
