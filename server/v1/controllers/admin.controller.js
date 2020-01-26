@@ -47,11 +47,7 @@ class adminController {
       });
     }
 
-    announcements.text = req.body.text;
-    announcements.owner = req.body.owner;
-    announcements.status = req.body.status;
-    announcements.startDate = req.body.startDate;
-    announcements.endDate = req.body.endDate;
+    exist.status = req.body.status;
 
     return res.status(200).json({
       status: 200,

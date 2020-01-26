@@ -90,10 +90,10 @@ function () {
         });
       }
 
-      _announcement["default"].text = req.body.text;
-      _announcement["default"].owner = req.body.owner;
-      _announcement["default"].startDate = req.body.startDate;
-      _announcement["default"].endDate = req.body.endDate;
+      exist.text = req.body.text;
+      exist.owner = req.body.owner;
+      exist.startDate = req.body.startDate;
+      exist.endDate = req.body.endDate;
       return res.status(200).json({
         status: 200,
         message: 'Announcement Updated!',

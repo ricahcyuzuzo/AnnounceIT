@@ -56,10 +56,10 @@ class advertiserController {
       });
     }
 
-    announcements.text = req.body.text;
-    announcements.owner = req.body.owner;
-    announcements.startDate = req.body.startDate;
-    announcements.endDate = req.body.endDate;
+    exist.text = req.body.text;
+    exist.owner = req.body.owner;
+    exist.startDate = req.body.startDate;
+    exist.endDate = req.body.endDate;
 
     return res.status(200).json({
       status: 200,

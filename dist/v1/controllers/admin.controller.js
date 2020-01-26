@@ -80,11 +80,7 @@ function () {
         });
       }
 
-      _announcement["default"].text = req.body.text;
-      _announcement["default"].owner = req.body.owner;
-      _announcement["default"].status = req.body.status;
-      _announcement["default"].startDate = req.body.startDate;
-      _announcement["default"].endDate = req.body.endDate;
+      exist.status = req.body.status;
       return res.status(200).json({
         status: 200,
         message: 'Announcement Status Changed!',
