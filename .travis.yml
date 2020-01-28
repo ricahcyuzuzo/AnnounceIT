@@ -4,9 +4,9 @@ node_js: 'stable'
 
 install: npm install
 
-services: postgresql 
- 
-before_script: psql -c 'create database testing;' -U announce -p kigali
+services: postgresql
+
+before_script: psql -c 'create database testing;' -U announce -P kigali
 
 script: npm test
 
