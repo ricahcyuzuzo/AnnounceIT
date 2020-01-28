@@ -7,15 +7,15 @@ dotenv.config();
 
 let pool;
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'isProduction';
 
 if (process.env.NODE_ENV === 'isTesting') {
   pool = new Pool({
     connectionString: process.env.TESTING
   });
-} else if (process.env.NODE_ENV === 'production') {
+} else if (process.env.NODE_ENV === 'isProduction') {
   pool = new Pool({
-    connectionString: isProduction,
+    connectionString: process.env.PRODUCTION,
     ssl: isProduction
   });
 } else {
