@@ -22,8 +22,7 @@ const validation = user => {
       .trim(),
     address: Hapi.string()
       .required()
-      .trim(),
-    isAdmin: Hapi.boolean().required()
+      .trim()
   });
 
   return schema.validate(user);
