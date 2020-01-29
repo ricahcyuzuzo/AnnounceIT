@@ -26,6 +26,16 @@ app.get('/', (req, res) => {
   });
 });
 
+app.use((req, res) => {
+  res
+    .type('json')
+    .status(404)
+    .json({
+      status: 404,
+      errorMessage: '404 Not Found!'
+    });
+});
+
 app.listen(port, console.log(port));
 
 export default app;

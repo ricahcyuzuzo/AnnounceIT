@@ -5,16 +5,23 @@ import auth from '../helpers/authenticate';
 
 const user = req => {
   const user = {
-    id: req.body.id,
     email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     password: auth.hashPassword(req.body.password),
     phoneNumber: req.body.phoneNumber,
-    address: req.body.address,
-    isAdmin: false
+    address: req.body.address
   };
   return user;
 };
 
-export default user;
+const userLogin = req => {
+  const user = {
+    email: req.body.email,
+    password: auth.hashPassword(req.body.password)
+  };
+
+  return user;
+};
+
+export default { user, userLogin };

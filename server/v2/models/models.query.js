@@ -1,6 +1,6 @@
 const userTable = `
     CREATE TABLE IF NOT EXISTS users(
-                id INT PRIMARY KEY ,
+                id SERIAL PRIMARY KEY ,
                 email text NOT NULL UNIQUE,
                 firstName VARCHAR(100),
                 lastName VARCHAR(100),

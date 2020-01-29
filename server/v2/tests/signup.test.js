@@ -11,32 +11,38 @@ chai.use(chaiHttp);
 
 describe('Testing the signup feature with the database', () => {
   const user = {
-    id: 1,
     email: 'test@test.com',
     firstName: 'Test',
     lastName: 'testin',
-    password: auth.hashPassword('test'),
-    phoneNumber: '0788888888',
+    password: auth.hashPassword('Testing123!'),
+    phoneNumber: '(078) 456-7827',
     address: 'Test'
   };
 
   const user2 = {
-    id: 2,
     email: 'testtest.com',
     firstName: 'Test',
     lastName: 'testin',
-    password: auth.hashPassword('test'),
+    password: auth.hashPassword('Testing123!'),
     phoneNumber: '0788888888',
     address: 'Test'
   };
 
   const user3 = {
-    id: 2,
     email: 'test@test.com',
     firstName: 'Test',
     lastName: 'testin',
-    password: auth.hashPassword('test'),
-    phoneNumber: '0788888888',
+    password: auth.hashPassword('Testing123!'),
+    phoneNumber: '(078) 980-9876',
+    address: 'Test'
+  };
+
+  const user4 = {
+    email: 'testing@test.com',
+    firstName: 'Test',
+    lastName: 'testin',
+    password: 'test',
+    phoneNumber: '(078) 980-9876',
     address: 'Test'
   };
 
@@ -74,6 +80,19 @@ describe('Testing the signup feature with the database', () => {
         res.should.have.status(409);
         res.body.should.have.be.a('object');
         res.body.should.have.property('errorMessage', 'Email already exist!');
+        done();
+      });
+  });
+
+  it('Should not create user if password is not strong', done => {
+    chai
+      .request(app)
+      .post('/api/v2/auth/signup')
+      .send(user4)
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.have.be.a('object');
+        res.body.should.have.property('errorMessage');
         done();
       });
   });
