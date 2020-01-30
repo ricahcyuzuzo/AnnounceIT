@@ -11,4 +11,10 @@ routes.post(
   advertiserController.createAnnouncement
 );
 
+routes.patch(
+  '/announcement/:id',
+  verifyToken,
+  advertiserController.updateAnnouncement
+);
+
 export default routes;

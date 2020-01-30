@@ -36,8 +36,39 @@ class advertiserController {
       const exist = exists.rows[0];
       res.status(201).json({
         status: 201,
-        message: 'Announcement created successfully',
+        message: 'Announcement created successfully!',
         data: exist
+      });
+    }
+  }
+
+  static async updateAnnouncement(req, res) {
+    const exist = await pool.query(announcementQueries.getOneUpdate, [
+      req.params.id
+    ]);
+
+    if (exist.rowCount === 0) {
+      return res.status(404).json({
+        status: 404,
+        errorMessage: 'Announcement not found!'
+      });
+    }
+    const { text, startDate, endDate } = req.body;
+    const updated = await pool.query(announcementQueries.updateAnnouncement, [
+      text,
+      startDate,
+      endDate,
+      req.params.id
+    ]);
+
+    if (updated.rowCount === 1) {
+      const exists = await pool.query(announcementQueries.getOneUpdate, [
+        req.params.id
+      ]);
+      res.status(200).json({
+        status: 200,
+        message: 'Announcement updated successfully!',
+        data: exists.rows[0]
       });
     }
   }
