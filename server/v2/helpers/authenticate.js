@@ -2,8 +2,8 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 class Authentication {
-  static generateToken(email, id) {
-    return jwt.sign({ email, id }, 'secretKey', { expiresIn: '120s' });
+  static generateToken(user) {
+    return jwt.sign({ user }, 'secretKey', { expiresIn: '1h' });
   }
 
   static hashPassword(password) {
