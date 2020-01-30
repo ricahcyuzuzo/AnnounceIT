@@ -19,7 +19,7 @@ describe('Testing the admin register  feature with the database', () => {
     password: auth.hashPassword('Testing123!'),
     phoneNumber: '0788888888',
     address: 'Test',
-    isAdmin: 'true'
+    isAdmin: true
   };
 
   before(async () => {
@@ -183,6 +183,19 @@ describe('Testing the admin register  feature with the database', () => {
           'errorMessage',
           'You are not allowed for this action!'
         );
+        done();
+      });
+  });
+
+  it('Should not create user admin if user not logged In!', done => {
+    chai
+      .request(app)
+      .post('/api/v2/auth/admin')
+      .send(user)
+      .end((err, res) => {
+        res.should.have.status(403);
+        res.body.should.have.be.a('object');
+        res.body.should.have.property('errorMessage', 'Failed to Authenticate');
         done();
       });
   });

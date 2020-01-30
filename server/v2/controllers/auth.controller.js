@@ -45,11 +45,12 @@ class userController {
         ]);
 
         if (added.rowCount === 1) {
-          const exi = await pool.query(userQueries.getOne, [lemail]);
+          const exists = await pool.query(userQueries.getOne, [lemail]);
           return res.status(201).json({
             status: 201,
             message: 'User created successfully!',
-            data: exi.rows[0]
+            data: exists.rows[0],
+            token: auth.generateToken(exists.rows[0])
           });
         }
       }
@@ -88,13 +89,13 @@ class userController {
       } else {
         res.status(401).json({
           status: 401,
-          errorMessage: 'Invalid Password'
+          errorMessage: 'Wrong email or password'
         });
       }
     } else {
       res.status(404).json({
         status: 404,
-        errorMessage: "Oops, You don't have an account yet, Sign up!"
+        errorMessage: 'Wrong email or password'
       });
     }
   }
@@ -137,12 +138,12 @@ class userController {
             isAdmin
           ]);
           if (added.rowCount === 1) {
-            const exi = await pool.query(userQueries.getOne, [lemail]);
+            const exists = await pool.query(userQueries.getOne, [lemail]);
             return res.status(201).json({
               status: 201,
               message: 'User admin created successfully!',
-              data: exi.rows[0],
-              token: auth.generateToken(exi.rows[0])
+              data: exists.rows[0],
+              token: auth.generateToken(exists.rows[0])
             });
           }
         }

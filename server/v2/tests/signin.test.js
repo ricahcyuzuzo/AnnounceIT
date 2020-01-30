@@ -86,7 +86,10 @@ describe('Testing the signin feature with the database', () => {
       .end((err, res) => {
         res.should.have.status(401);
         res.should.have.be.a('object');
-        res.body.should.have.property('errorMessage', 'Invalid Password');
+        res.body.should.have.property(
+          'errorMessage',
+          'Wrong email or password'
+        );
         done();
       });
   });
@@ -100,7 +103,7 @@ describe('Testing the signin feature with the database', () => {
         res.should.have.be.a('object');
         res.body.should.have.property(
           'errorMessage',
-          "Oops, You don't have an account yet, Sign up!"
+          'Wrong email or password'
         );
         done();
       });

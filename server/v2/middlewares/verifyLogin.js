@@ -18,7 +18,7 @@ const verifyLogin = async (req, res, next) => {
   } catch (error) {
     res.status(403).json({
       status: 403,
-      errorMessage: 'Failed to Athenticate'
+      errorMessage: 'Failed to Authenticate'
     });
   }
 };
