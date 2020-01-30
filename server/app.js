@@ -7,6 +7,7 @@ import advertiserRoutes from './v1/routes/advertiser.routes';
 import adminRoutes from './v1/routes/admin.routes';
 import authRoute from './v2/routes/auth.routes';
 import advertiserRoute from './v2/routes/advertiser.routes';
+import adminRoute from './v2/routes/admin.routes';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,6 +22,7 @@ app.use('/api/v1', advertiserRoutes);
 app.use('/api/v1', adminRoutes);
 app.use('/api/v2', authRoute);
 app.use('/api/v2', advertiserRoute);
+app.use('/api/v2', adminRoute);
 
 app.get('/', (req, res) => {
   res.send({

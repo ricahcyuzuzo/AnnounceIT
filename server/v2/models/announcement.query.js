@@ -16,6 +16,7 @@ const getmyAnnouncements = 'SELECT * FROM announcements WHERE owner=$1';
 const getallbyState = 'SELECT * FROM announcements WHERE status=$1';
 const getAnnouncement =
   'SELECT text, startdate, enddate FROM announcements WHERE id=$1';
+const deleteAnnouncement = 'DELETE FROM announcements WHERE id=$1';
 export default {
   createAnnouncement,
   getOne,
@@ -23,5 +24,6 @@ export default {
   updateAnnouncement,
   getmyAnnouncements,
   getallbyState,
-  getAnnouncement
+  getAnnouncement,
+  deleteAnnouncement
 };
