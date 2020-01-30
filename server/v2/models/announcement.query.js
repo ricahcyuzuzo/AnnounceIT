@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
 /* eslint-disable operator-linebreak */
 const createAnnouncement = `INSERT INTO announcements (
@@ -11,4 +12,11 @@ const getOne = 'SELECT * FROM announcements WHERE text=$1';
 const getOneUpdate = 'SELECT * FROM announcements WHERE id=$1';
 const updateAnnouncement =
   'UPDATE announcements SET text=$1, startdate=$2, enddate=$3 WHERE id=$4';
-export default { createAnnouncement, getOne, getOneUpdate, updateAnnouncement };
+const getmyAnnouncements = 'SELECT * FROM announcements WHERE owner=$1';
+export default {
+  createAnnouncement,
+  getOne,
+  getOneUpdate,
+  updateAnnouncement,
+  getmyAnnouncements
+};

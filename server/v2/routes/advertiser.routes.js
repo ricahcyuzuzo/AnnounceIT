@@ -17,4 +17,10 @@ routes.patch(
   advertiserController.updateAnnouncement
 );
 
+routes.get(
+  '/announcement/:ownerId',
+  verifyToken,
+  advertiserController.viewAnnouncements
+);
+
 export default routes;
