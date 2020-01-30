@@ -92,6 +92,25 @@ class advertiserController {
       });
     }
   }
+
+  static async viewannouncementsbyState(req, res) {
+    const announcements = await pool.query(announcementQueries.getallbyState, [
+      req.query.status
+    ]);
+
+    if (announcements.rowCount === 0) {
+      res.status(404).json({
+        status: 404,
+        errorMessage: 'No announcement on that status!'
+      });
+    } else {
+      res.status(200).json({
+        status: 200,
+        message: `Here are all announcements by state ${req.query.status}`,
+        data: announcements.rows
+      });
+    }
+  }
 }
 
 export default advertiserController;

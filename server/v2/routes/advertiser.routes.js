@@ -23,4 +23,10 @@ routes.get(
   advertiserController.viewAnnouncements
 );
 
+routes.get(
+  '/announcement/',
+  verifyToken,
+  advertiserController.viewannouncementsbyState
+);
+
 export default routes;
