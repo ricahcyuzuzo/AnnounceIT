@@ -14,11 +14,14 @@ const updateAnnouncement =
   'UPDATE announcements SET text=$1, startdate=$2, enddate=$3 WHERE id=$4';
 const getmyAnnouncements = 'SELECT * FROM announcements WHERE owner=$1';
 const getallbyState = 'SELECT * FROM announcements WHERE status=$1';
+const getAnnouncement =
+  'SELECT text, startdate, enddate FROM announcements WHERE id=$1';
 export default {
   createAnnouncement,
   getOne,
   getOneUpdate,
   updateAnnouncement,
   getmyAnnouncements,
-  getallbyState
+  getallbyState,
+  getAnnouncement
 };

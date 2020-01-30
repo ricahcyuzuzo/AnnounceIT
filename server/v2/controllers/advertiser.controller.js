@@ -111,6 +111,26 @@ class advertiserController {
       });
     }
   }
+
+  static async viewspecificAnnouncement(req, res) {
+    const oneAnnouncement = await pool.query(
+      announcementQueries.getAnnouncement,
+      [req.params.announcementId]
+    );
+
+    if (oneAnnouncement.rowCount === 0) {
+      res.status(404).json({
+        status: 404,
+        errorMessage: 'The announcement not found!'
+      });
+    } else {
+      res.status(200).json({
+        status: 200,
+        message: 'Here is the announcement',
+        data: oneAnnouncement.rows[0]
+      });
+    }
+  }
 }
 
 export default advertiserController;
