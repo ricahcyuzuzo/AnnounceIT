@@ -41,6 +41,45 @@ class adminController {
       });
     }
   }
+
+  static async changeStatus(req, res) {
+    const token = req.headers.authorization.split(' ')[1];
+    const decoded = jwtDecode(token);
+
+    if (decoded.user.isadmin === true) {
+      const exist = await pool.query(announcementQueries.getOneUpdate, [
+        req.params.id
+      ]);
+
+      if (exist.rowCount === 0) {
+        return res.status(404).json({
+          status: 404,
+          errorMessage: 'Announcement not found!'
+        });
+      }
+
+      const updated = await pool.query(announcementQueries.changeStatus, [
+        req.body.status,
+        req.params.id
+      ]);
+
+      if (updated.rowCount > 0) {
+        const exists = await pool.query(announcementQueries.getOneUpdate, [
+          req.params.id
+        ]);
+        return res.status(202).json({
+          status: 202,
+          message: 'Status of announcement changed!',
+          data: exists.rows[0]
+        });
+      }
+    } else {
+      res.status(401).json({
+        status: 401,
+        errorMessage: 'You are not allowed for this action!'
+      });
+    }
+  }
 }
 
 export default adminController;

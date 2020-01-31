@@ -11,4 +11,10 @@ routes.delete(
   adminController.deleteAnnouncement
 );
 
+routes.patch(
+  '/announcement/:id/sold',
+  verifyToken,
+  adminController.changeStatus
+);
+
 export default routes;
