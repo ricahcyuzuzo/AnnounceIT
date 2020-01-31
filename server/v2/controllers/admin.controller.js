@@ -80,6 +80,28 @@ class adminController {
       });
     }
   }
+
+  static async viewAllAnnouncements(req, res) {
+    const token = req.headers.authorization.split(' ')[1];
+    const decoded = jwtDecode(token);
+
+    if (decoded.user.isadmin === true) {
+      const getall = await pool.query(announcementQueries.getallAnnouncements);
+
+      if (getall.rowCount > 0) {
+        return res.status(200).json({
+          status: 200,
+          message: 'Here are all announcements!',
+          data: getall.rows[0]
+        });
+      }
+    } else {
+      res.status(401).json({
+        status: 401,
+        errorMessage: 'You are not allowed for this action!'
+      });
+    }
+  }
 }
 
 export default adminController;

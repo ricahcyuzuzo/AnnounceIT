@@ -17,4 +17,10 @@ routes.patch(
   adminController.changeStatus
 );
 
+routes.get(
+  '/allannouncements/',
+  verifyToken,
+  adminController.viewAllAnnouncements
+);
+
 export default routes;
